@@ -1,0 +1,15 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="beans.Course" table="Course" schema="Mas">
+		<id name="cid" column="cid"/>
+		<property name="cname" column="cname"/>
+		<property name="fee" column="fee"/>
+
+	
+	</class>
+
+
+</hibernate-mapping>
