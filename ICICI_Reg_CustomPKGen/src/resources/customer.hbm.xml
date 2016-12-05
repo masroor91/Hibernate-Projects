@@ -1,0 +1,19 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<class name="beans.Customer" table="ICICIAccount" schema="Mas">
+		<id name="acno" column="acno">
+			<generator class="beans.ICICI_CustomPKGen"/>
+		
+		</id>
+		
+		<property name="name" column="name"/>
+		<property name="email" column="email"/>
+		<property name="phone" column="phone"/>
+		<property name="balance" column="balance"/>
+	
+	</class>
+
+</hibernate-mapping>
