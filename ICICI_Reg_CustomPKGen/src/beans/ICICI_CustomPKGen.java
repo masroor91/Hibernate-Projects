@@ -20,16 +20,20 @@ public class ICICI_CustomPKGen extends IdentityGenerator {
 			
 		
 			Statement maxstmt= con.createStatement();
-			String sql="SELECT acno FROM ICICIAccount ORDER BY acno DESC LIMIT 1";
+			String sql="SELECT * FROM ICICIAccount ORDER BY acno DESC LIMIT 1";
 		
 			ResultSet rs=   maxstmt.executeQuery(sql);
-			System.out.println(rs.next());
+			//System.out.println(rs.next());
 			
 			if (rs.next()){
 				
 				String acno=rs.getString(1);
-				int i= Integer.parseInt(acno.substring(acno.lastIndexOf('I'), acno.length()));
-				builder.append(++i);
+				System.out.println(acno);
+				int i= Integer.parseInt(acno.substring(acno.lastIndexOf('I')+1));
+				i++;
+				builder.append(i);
+				
+				System.out.println(builder.toString());
 			}
 			else{
 				builder.append(1000);

@@ -11,10 +11,12 @@ import org.hibernate.id.IdentityGenerator;
 
 public class ICICIAccGenerator extends IdentityGenerator {
 	
-	StringBuilder builder = new StringBuilder("ICICI");  
+	
 	
 	@Override
 	public Serializable generate(SessionImplementor s, Object obj) {
+		
+		String pk= "ICICI"; 
 		
 		//get next sequence
 		//append sequence to ICICI
@@ -31,8 +33,12 @@ public class ICICIAccGenerator extends IdentityGenerator {
 			String sql="values next value for db2admin5.icici_sequence"; //for getting next val from sequence in db2
 			ResultSet rs = sequencetstmt.executeQuery(sql);
 			
+			int seq;
 			if (rs.next()){
-				builder.append(rs.getInt(1));
+				seq=rs.getInt(1);
+				pk= pk+seq;
+				
+				System.out.println(pk);
 			}
 			
 		} catch (SQLException e) {
@@ -40,7 +46,7 @@ public class ICICIAccGenerator extends IdentityGenerator {
 			e.printStackTrace();
 		}
 		
-		return builder.toString();
+		return pk;
 	}
 
 }
