@@ -1,0 +1,28 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+<hibernate-configuration>
+	
+	<session-factory>
+		<property name="connection.driver_class">com.ibm.db2.jcc.DB2Driver</property>
+		<property name="connection.url">jdbc:db2://PC181461.cts.com:50000/Mas</property>
+		<property name="connection.username">db2admin5</property>
+		<property name="connection.password">Admin@123</property>
+		<property name="connection.pool-size">10</property>
+		
+		<property name="dialect">org.hibernate.dialect.DB2Dialect</property>
+		
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		
+		
+		<mapping resource="resources/student.hbm.xml"/>
+	
+	
+	
+	</session-factory>
+
+
+</hibernate-configuration>
