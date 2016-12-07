@@ -13,12 +13,12 @@
 	
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create</property>
 		
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
-		<mapping resource="resources/student.hbm.xml"/>
+		<mapping class="beans.Student"/>
 	
 	</session-factory>
 </hibernate-configuration>
