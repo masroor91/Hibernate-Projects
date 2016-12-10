@@ -21,10 +21,4 @@
 		<mapping resource="resources/student.hbm.xml"/>
 	
 	</session-factory>
-	
-	
-
-
-
-
 </hibernate-configuration>

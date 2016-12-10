@@ -4,21 +4,22 @@
 
 <hibernate-configuration>
 	<session-factory>
-	
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://localhost/Mas</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 		<property name="connection.pool-size">10</property>
-	
+		
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		
-		<property name="hbm2ddl.auto">update</property>
-		
+		<property name="hbm2ddl.auto">create</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
-		<mapping resource="resources/student.hbm.xml"/>
-	
+		<mapping resource="resources/course.hbm.xml"/>
+		<mapping resource="resources/faculty.hbm.xml"/>
+		
 	</session-factory>
+
+
 </hibernate-configuration>
